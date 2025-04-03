@@ -1,19 +1,20 @@
 {
-    "cleanUrls": true,
-    "trailingSlash": false,
-    "routes": [
-        { "handle": "filesystem" },
-        { "src": "/(.*)", "dest": "/index.html" }
+    "version": 2,
+    "builds": [
+        { "src": "*.html", "use": "@vercel/static" },
+        { "src": "public/**", "use": "@vercel/static" },
+        { "src": "css/**", "use": "@vercel/static" },
+        { "src": "js/**", "use": "@vercel/static" },
+        { "src": "images/**", "use": "@vercel/static" },
+        { "src": "fonts/**", "use": "@vercel/static" }
     ],
-    "headers": [
-        {
-            "source": "/(.*).(jpg|jpeg|png|gif|ico|css|js)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                }
-            ]
-        }
+    "routes": [
+        { "src": "/", "dest": "/index.html" },
+        { "src": "/(.+)\\.html", "dest": "/$1.html" },
+        { "src": "/public/(.*)", "dest": "/public/$1" },
+        { "src": "/css/(.*)", "dest": "/css/$1" },
+        { "src": "/js/(.*)", "dest": "/js/$1" },
+        { "src": "/images/(.*)", "dest": "/images/$1" },
+        { "src": "/fonts/(.*)", "dest": "/fonts/$1" }
     ]
 }
