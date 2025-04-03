@@ -192,6 +192,32 @@ body {
     width: 100%;
 }
 
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.button-group .btn {
+    flex: 1;
+    min-width: 200px;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .button-group .btn {
+        width: 100%;
+    }
+}
+
+/* Enhanced Dropdown Menu */
 .nav__item--dropdown {
     position: relative;
 }
@@ -202,13 +228,14 @@ body {
     left: 0;
     background: white;
     min-width: 200px;
-    padding: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
     transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 .nav__item--dropdown:hover .nav__dropdown {
@@ -219,15 +246,38 @@ body {
 
 .nav__dropdown-link {
     display: block;
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     color: var(--color-dark);
     text-decoration: none;
     transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .nav__dropdown-link:hover {
-    background: rgba(37, 99, 235, 0.05);
-    color: var(--color-primary);
+    background: var(--color-primary);
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .nav__dropdown {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding-left: var(--spacing-lg);
+        min-width: auto;
+        background: transparent;
+    }
+
+    .nav__dropdown-link {
+        padding: 0.5rem 0;
+    }
+
+    .nav__dropdown-link:hover {
+        background: transparent;
+        color: var(--color-primary);
+    }
 }
 
 /* ==========================================================================
@@ -289,26 +339,56 @@ body {
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
-    color: white;
-    text-decoration: none;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius-md);
-    font-weight: 600;
-    transition: all var(--transition-fast);
-    border: none;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
     cursor: pointer;
-    box-shadow: var(--shadow-md);
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    border: none;
+    position: relative;
+    z-index: 1;
 }
 
 .btn--primary {
-    background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+    background: var(--color-primary);
+    color: white !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn--primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white !important;
+}
+
+.btn--secondary {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn--secondary:hover {
+    background: var(--color-secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section Button */
+.hero .btn {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    z-index: 2;
+}
+
+/* Ensure button is above overlay */
+.hero .btn,
+.hero .btn:hover {
+    position: relative;
+    z-index: 2;
 }
 
 /* ==========================================================================
@@ -525,26 +605,92 @@ body {
    Highlight Box
    ========================================================================== */
 .highlight-box {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    color: white;
-    padding: 2rem;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
     border-radius: var(--radius-lg);
-    text-align: center;
+    padding: 2rem;
     margin: 2rem 0;
+    color: var(--color-text);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.highlight-box h3 {
-    margin: 0 0 1rem;
-    color: white;
+.highlight-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.highlight-box .btn {
-    background: white;
+.highlight-box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
     color: var(--color-primary);
 }
 
+.highlight-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.highlight-box p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.highlight-box li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.highlight-box li::before {
+    content: "✓";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+}
+
+.highlight-box .btn {
+    color: var(--color-white);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
 .highlight-box .btn:hover {
-    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-box .btn i {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .highlight-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .highlight-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .highlight-box p {
+        font-size: 1rem;
+    }
+
+    .highlight-box .btn {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
 }
 
 /* ==========================================================================
@@ -1034,5 +1180,256 @@ body {
         aspect-ratio: 16/9;
         max-width: 300px;
         margin: 0 auto;
+    }
+}
+
+/* Content List Styles */
+.content-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+}
+
+.content-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.content-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Fee Table Styles */
+.fee-table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.fee-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fee-table th,
+.fee-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.fee-table th {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.fee-table tr:hover {
+    background: var(--color-background);
+}
+
+/* CTA Box Styles */
+.cta-box {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.contact-link i {
+    margin-right: 0.5rem;
+}
+
+/* Card Content Styles */
+.card__content {
+    padding: 2rem;
+}
+
+.card__content h3 {
+    color: var(--color-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card__content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .fee-table {
+        margin: 1rem -1rem;
+        width: calc(100% + 2rem);
+    }
+
+    .fee-table th,
+    .fee-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .highlight-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .card__content {
+        padding: 1.5rem;
+    }
+}
+
+/* Registration Tables */
+.table-responsive {
+    overflow-x: auto;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-md);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover td {
+    background: var(--color-background);
+}
+
+/* Payment Details */
+.payment-details {
+    background: var(--color-background);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    margin: 2rem 0;
+}
+
+.payment-details h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.payment-details .content-list {
+    margin: 0;
+}
+
+.payment-details .content-list li {
+    margin-bottom: 0.75rem;
+}
+
+.payment-details .content-list li strong {
+    color: var(--color-dark);
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .table th,
+    .table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Committee Styles */
+.committee-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.committee-chair {
+    padding: 1.5rem;
+    background: var(--color-background-light);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.committee-chair h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.committee-group {
+    padding: 1.5rem;
+    background: var(--color-background-light);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.committee-group h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.committee-group p {
+    margin-bottom: 1rem;
+}
+
+.support-staff {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.support-staff h4 {
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.support-staff ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.support-staff li {
+    padding: 0.25rem 0;
+    color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+    .committee-section {
+        gap: 1rem;
+    }
+    
+    .committee-chair,
+    .committee-group {
+        padding: 1rem;
     }
 } 
