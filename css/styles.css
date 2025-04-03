@@ -3,10 +3,10 @@
    ========================================================================== */
 :root {
     /* Colors */
-    --color-primary: #2563eb;
-    --color-primary-dark: #1d4ed8;
-    --color-secondary: #3b82f6;
-    --color-accent: #0ea5e9;
+    --color-primary: #1f4037;
+    --color-primary-dark: #183229;
+    --color-secondary: #1f4037;
+    --color-accent: #1f4037;
     --color-light: #f8fafc;
     --color-dark: #1e293b;
     --color-success: #22c55e;
@@ -180,12 +180,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-primary);
+    background: #1f4037;
     transition: width 0.3s ease;
 }
 
 .nav__link:hover {
-    color: var(--color-primary);
+    color: #1f4037;
 }
 
 .nav__link:hover::after {
@@ -254,7 +254,7 @@ body {
 }
 
 .nav__dropdown-link:hover {
-    background: var(--color-primary);
+    background: #1f4037;
     color: white;
 }
 
@@ -515,7 +515,7 @@ body {
 
 .card__title {
     font-size: 1.75rem;
-    color: var(--color-primary);
+    color: #1f4037;
     margin-bottom: var(--spacing-sm);
     font-weight: 600;
 }
@@ -623,9 +623,9 @@ body {
 
 .topic-item i {
     font-size: 2rem;
-    color: var(--color-primary);
+    color: #1f4037;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(135deg, #1f4037, #1f4037);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -652,7 +652,7 @@ body {
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+    background: linear-gradient(to bottom, #1f4037, #1f4037);
 }
 
 .timeline-item {
@@ -676,7 +676,7 @@ body {
 
 .timeline-date {
     font-weight: 600;
-    color: var(--color-primary);
+    color: #1f4037;
     margin-bottom: 0.5rem;
 }
 
@@ -750,7 +750,7 @@ body {
 
 .highlight-box li::before {
     content: "✓";
-    color: var(--color-primary);
+    color: #1f4037;
     position: absolute;
     left: 0;
 }
@@ -834,7 +834,7 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: #1f4037;
     font-weight: bold;
 }
 
@@ -856,7 +856,7 @@ body {
     left: 0;
     width: 50px;
     height: 3px;
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    background: linear-gradient(to right, #1f4037, #1f4037);
 }
 
 /* ==========================================================================
@@ -1102,12 +1102,12 @@ body {
 }
 
 .committee-member h3 {
-    color: var(--color-primary);
+    color: #1f4037;
     margin-bottom: var(--spacing-md);
     font-size: 1.2rem;
     font-weight: 600;
     padding-bottom: var(--spacing-sm);
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid #1f4037;
 }
 
 .committee-member ul {
@@ -1126,7 +1126,7 @@ body {
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: #1f4037;
 }
 
 .committee-list {
@@ -1152,7 +1152,7 @@ body {
 
 .committee-list li:hover {
     transform: translateX(5px);
-    border-color: var(--color-primary);
+    border-color: #1f4037;
     box-shadow: var(--shadow-sm);
 }
 
@@ -1234,8 +1234,8 @@ body {
 
 /* Hover Effects */
 .logo-item:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.12);
+    border-color: #1f4037;
+    box-shadow: 0 8px 16px rgba(31, 64, 55, 0.12);
     transform: translateY(-4px);
 }
 
@@ -1311,7 +1311,7 @@ body {
 
 .content-list li::before {
     content: "•";
-    color: var(--color-primary);
+    color: #1f4037;
     position: absolute;
     left: 0;
     top: 0;
@@ -1339,7 +1339,7 @@ body {
 }
 
 .fee-table th {
-    background: var(--color-primary);
+    background: #1f4037;
     color: var(--color-white);
     font-weight: 600;
 }
@@ -1360,7 +1360,7 @@ body {
 .contact-link {
     display: inline-flex;
     align-items: center;
-    color: var(--color-primary);
+    color: #1f4037;
     text-decoration: none;
     margin-top: 1rem;
 }
@@ -1375,7 +1375,7 @@ body {
 }
 
 .card__content h3 {
-    color: var(--color-primary);
+    color: #1f4037;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -1430,7 +1430,7 @@ body {
 }
 
 .table th {
-    background: var(--color-primary);
+    background: #1f4037;
     color: white;
     font-weight: 600;
 }
@@ -1452,7 +1452,7 @@ body {
 }
 
 .payment-details h3 {
-    color: var(--color-primary);
+    color: #1f4037;
     margin-bottom: 1rem;
 }
 
@@ -1492,7 +1492,7 @@ body {
 }
 
 .committee-chair h3 {
-    color: var(--color-primary);
+    color: #1f4037;
     margin-bottom: 0.5rem;
 }
 
@@ -1504,7 +1504,7 @@ body {
 }
 
 .committee-group h3 {
-    color: var(--color-primary);
+    color: #1f4037;
     margin-bottom: 0.5rem;
 }
 
@@ -1543,5 +1543,145 @@ body {
     .committee-chair,
     .committee-group {
         padding: 1rem;
+    }
+}
+
+/* Travel Page Styles */
+.travel-section {
+    margin-bottom: var(--spacing-xl);
+    overflow: hidden; /* Add overflow control to the section */
+}
+
+.travel-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure card contents don't overflow */
+}
+
+.travel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.travel-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.travel-card__icon {
+    font-size: 2rem;
+    color: #1f4037;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(31, 64, 55, 0.1);
+    border-radius: 50%;
+}
+
+.travel-card__title {
+    font-size: 1.5rem;
+    color: #1f4037;
+    margin: 0;
+}
+
+.travel-info {
+    margin-bottom: var(--spacing-lg);
+}
+
+.travel-info__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.travel-info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.travel-info__item:last-child {
+    border-bottom: none;
+}
+
+.travel-info__icon {
+    color: #1f4037;
+    font-size: 1.2rem;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.travel-info__content {
+    flex: 1;
+}
+
+.travel-info__label {
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: #1f4037;
+}
+
+.travel-map {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: var(--spacing-lg) auto; /* Center the map */
+}
+
+.travel-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .travel-section {
+        padding: 0; /* Remove section padding on mobile */
+    }
+
+    .travel-card {
+        border-radius: var(--radius-md);
+        padding: var(--spacing-md);
+        margin: 0 auto var(--spacing-md);
+        width: 100%;
+    }
+
+    .travel-map {
+        margin: var(--spacing-md) 0;
+        height: 300px;
+        border-radius: var(--radius-sm);
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .travel-card {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .travel-map {
+        height: 250px;
+        margin: var(--spacing-sm) 0;
     }
 } 
