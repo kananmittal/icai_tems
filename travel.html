@@ -70,16 +70,47 @@
 
         <section class="section">
             <div class="container">
+                <!-- Travel Guide Section -->
+                <div class="card">
+                    <div class="card__header">
+                        <h2 class="card__title">Cosenza</h2>
+                        <p class="card__subtitle">Travel Guide</p>
+                    </div>
+                    <div class="travel-guide">
+                        <!-- Main Image -->
+                        <div class="travel-guide__main">
+                            <img src="/images/cosenza1.png" alt="Cosenza Bridge and Historic Buildings" class="travel-guide__image travel-guide__image--main">
+                        </div>
+                        
+                        <!-- Image Grid -->
+                        <div class="travel-guide__grid">
+                            <div class="travel-guide__item">
+                                <img src="/images/cosenza2.png" alt="Cosenza Evening Bridge View" class="travel-guide__image">
+                            </div>
+                            <div class="travel-guide__item">
+                                <img src="/images/cosenza3.png" alt="Historic Church Interior" class="travel-guide__image">
+                            </div>
+                            <div class="travel-guide__item">
+                                <img src="/images/cosenza4.png" alt="Traditional Italian Cafe" class="travel-guide__image">
+                            </div>
+                        </div>
+
+                        <div class="travel-guide__description">
+                            <p>Discover the enchanting city of Cosenza, where medieval charm meets modern vibrancy. Explore historic bridges, ancient architecture, and savor authentic Italian cuisine in this cultural heart of Calabria.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Conference Venue -->
                 <div class="card">
                     <div class="card__header">
                         <h2 class="card__title">Conference Venue</h2>
                     </div>
                     <div class="card__content">
-                        <div style="display: flex; align-items: flex-start; gap: 2rem;">
-                            <div style="flex: 1;">
-                                <p><strong>Aula Magna</strong><br>
-                                University Of Calabria</p>
+                        <div class="venue-container">
+                            <div class="venue-info">
+                                <h3><i class="fas fa-university"></i> Aula Magna</h3>
+                                <p>University Of Calabria</p>
                                 <p>For more information about the conference venue, visit: 
                                     <a href="https://www.unical.it/campus/vivere-il-campus/centro-congressi/" target="_blank" rel="noopener noreferrer">
                                         University of Calabria Congress Center
@@ -87,16 +118,16 @@
                                 </p>
                             </div>
                             
-                            <div class="map-container" style="flex: 0 0 400px;">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1534.0563158198168!2d16.22650577689138!3d39.35973647159135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133f99a2e812e56d%3A0x3112e3df27839dbb!2sAula%20Magna%20Universit%C3%A0%20della%20Calabria!5e0!3m2!1sen!2sit!4v1710431161813!5m2!1sen!2sit" 
-                                    width="100%" 
-                                    height="300" 
-                                    style="border:0; border-radius: var(--radius-lg);" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
+                            <div class="venue-map">
+                                <div class="map-wrapper">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1534.0563158198168!2d16.22650577689138!3d39.35973647159135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133f99a2e812e56d%3A0x3112e3df27839dbb!2sAula%20Magna%20Universit%C3%A0%20della%20Calabria!5e0!3m2!1sen!2sit!4v1710431161813!5m2!1sen!2sit" 
+                                        style="border:0;" 
+                                        allowfullscreen="" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
