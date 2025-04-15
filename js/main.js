@@ -119,4 +119,62 @@ document.addEventListener('DOMContentLoaded', function() {
         
         lastScroll = currentScroll;
     });
+
+    // Slideshow functionality
+    const slideshow = document.querySelector('.slideshow');
+    if (!slideshow) return;
+
+    const slides = slideshow.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.slideshow-prev');
+    const nextButton = document.querySelector('.slideshow-next');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+
+    // Initialize first slide
+    showSlide(currentSlide);
+    startSlideshow();
+
+    // Event listeners for buttons
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        });
+    }
+
+    // Pause slideshow on hover
+    slideshow.addEventListener('mouseenter', stopSlideshow);
+    slideshow.addEventListener('mouseleave', startSlideshow);
 }); 

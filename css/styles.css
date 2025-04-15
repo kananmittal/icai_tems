@@ -355,6 +355,88 @@ body {
     cursor: default;
 }
 
+.travel-hero {
+    position: relative;
+    padding: 0;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: 190px;
+}
+
+.travel-hero .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.travel-hero .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.travel-hero .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.travel-hero .slide.active {
+    opacity: 1;
+}
+
+.travel-hero .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.travel-hero .slideshow-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.travel-hero .slideshow-prev,
+.travel-hero .slideshow-next {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.travel-hero .slideshow-prev:hover,
+.travel-hero .slideshow-next:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.travel-hero .slideshow-prev i,
+.travel-hero .slideshow-next i {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .travel-hero {
+        height: 40vh;
+        margin-top: 120px;
+    }
+}
+
 .hero::before {
     display: none; /* Remove the old pattern */
 }
@@ -1072,7 +1154,6 @@ body {
         overflow-y: auto;
         transition: 0.3s ease-in-out;
         z-index: 1000;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     }
 
     /* ... rest of the mobile styles ... */
@@ -1868,4 +1949,43 @@ body {
     .venue-container {
         gap: var(--spacing-md);
     }
+}
+
+.member-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}
+
+.member-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-primary);
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.member-affiliation {
+    font-size: 0.85rem;
+    color: var(--color-dark);
+    opacity: 0.8;
+}
+
+.cv-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.cv-link:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
 } 
