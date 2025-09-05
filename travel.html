@@ -15,6 +15,48 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     
+    <!-- Custom CSS to remove green lines -->
+    <style>
+        .card__title::before,
+        .card__title::after,
+        .card__subtitle::before,
+        .card__subtitle::after,
+        h1::before,
+        h1::after,
+        h2::before,
+        h2::after,
+        h3::before,
+        h3::after {
+            display: none !important;
+        }
+        
+        .card__header *::before,
+        .card__header *::after {
+            display: none !important;
+        }
+        
+        /* Remove any potential borders or lines */
+        .card__title,
+        .card__subtitle,
+        .card__header h2,
+        .card__header p {
+            border: none !important;
+            border-bottom: none !important;
+            border-top: none !important;
+            border-left: none !important;
+            border-right: none !important;
+        }
+        
+        /* Ensure no background gradients or lines */
+        .card__title::before,
+        .card__title::after,
+        .card__subtitle::before,
+        .card__subtitle::after {
+            background: none !important;
+            content: none !important;
+        }
+    </style>
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -89,22 +131,18 @@
             </div>
         </section>
 
-        <section class="section" style="padding-top: 0;">
-            <div class="container">
-                <div class="hero__deadline-notice" style="margin: 20px auto; display: block; text-align: center;">
-                    <span class="hero__deadline-label">Paper Submission Deadline Extended:</span>
-                    <span class="hero__deadline-date"><span class="old-date">15-May-25</span> → July 31, 2025</span>
-                </div>
-            </div>
-        </section>
 
         <section class="section">
-            <div class="container">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
                 <!-- Travel Guide Section -->
-                <div class="card">
-                    <div class="card__header">
-                        <h2 class="card__title">Cosenza</h2>
-                        <p class="card__subtitle">Travel Guide</p>
+                <div class="card" style="margin: 0 auto 3rem auto; max-width: 1000px; width: 100%;">
+                    <div class="card__header" style="text-align: center !important; padding: 1.5rem 2rem !important; border-bottom: none !important; margin-bottom: 0 !important;">
+                        <h2 class="card__title" style="margin-bottom: 1rem !important; text-align: center !important; color: #1f4037 !important;">Cosenza</h2>
+                        <p class="card__subtitle" style="font-size: 1.2rem !important; margin-bottom: 0.5rem !important; color: #666 !important; text-align: center !important;">Half day Social Tour to a Medieval city in Southern Italy</p>
+                        <p class="card__subtitle" style="font-size: 1rem !important; margin-bottom: 1.5rem !important; color: #888 !important; text-align: center !important;">Please fill the form below and contact Conference reception directly</p>
+                        <div style="text-align: center !important; margin-top: 1rem !important;">
+                            <a href="#" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Register for the Social Tour</a>
+                        </div>
                     </div>
                     <div class="travel-guide">
                         <!-- Main Image -->
@@ -125,34 +163,34 @@
                             </div>
                         </div>
 
-                        <div class="travel-guide__description">
-                            <p>Discover the enchanting city of Cosenza, where medieval charm meets modern vibrancy. Explore historic bridges, ancient architecture, and savor authentic Italian cuisine in this cultural heart of Calabria.</p>
+                        <div class="travel-guide__description" style="padding: 2rem; text-align: center !important; background-color: #f8f9fa; border-radius: 8px; margin: 2rem auto; max-width: 800px;">
+                            <p style="font-size: 1.1rem; line-height: 1.6; color: #555; margin: 0; text-align: center !important;">Discover the enchanting city of Cosenza, where medieval charm meets modern vibrancy. Explore historic bridges, ancient architecture, and savor authentic Italian cuisine in this cultural heart of Calabria.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Conference Venue -->
-                <div class="card">
-                    <div class="card__header">
-                        <h2 class="card__title">Conference Venue</h2>
+                <div class="card" style="margin: 0 auto 3rem auto; max-width: 1000px; width: 100%;">
+                    <div class="card__header" style="text-align: center; padding: 2rem 0 1rem 0;">
+                        <h2 class="card__title" style="margin-bottom: 0.5rem;">Conference Venue</h2>
                     </div>
-                    <div class="card__content">
+                    <div class="card__content" style="padding: 0 2rem 2rem 2rem;">
                         <div class="venue-container">
-                            <div class="venue-info">
-                                <h3><i class="fas fa-university"></i> Aula Magna</h3>
-                                <p>University Of Calabria</p>
-                                <p>For more information about the conference venue, visit: 
-                                    <a href="https://www.unical.it/campus/vivere-il-campus/centro-congressi/" target="_blank" rel="noopener noreferrer">
+                            <div class="venue-info" style="text-align: center; margin-bottom: 2rem;">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem;"><i class="fas fa-university"></i> Aula Magna</h3>
+                                <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">University Of Calabria</p>
+                                <p style="font-size: 1rem; line-height: 1.6;">For more information about the conference venue, visit: 
+                                    <a href="https://www.unical.it/campus/vivere-il-campus/centro-congressi/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">
                                         University of Calabria Congress Center
                                     </a>
                                 </p>
                             </div>
                             
-                            <div class="venue-map">
-                                <div class="map-wrapper">
+                            <div class="venue-map" style="margin-top: 2rem;">
+                                <div class="map-wrapper" style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1534.0563158198168!2d16.22650577689138!3d39.35973647159135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133f99a2e812e56d%3A0x3112e3df27839dbb!2sAula%20Magna%20Universit%C3%A0%20della%20Calabria!5e0!3m2!1sen!2sit!4v1710431161813!5m2!1sen!2sit" 
-                                        style="border:0;" 
+                                        style="border:0; width: 100%; height: 400px;" 
                                         allowfullscreen="" 
                                         loading="lazy" 
                                         referrerpolicy="no-referrer-when-downgrade">
@@ -164,37 +202,56 @@
                 </div>
 
                 <!-- Transportation -->
-                <div class="card">
-                    <div class="card__header">
-                        <h2 class="card__title">Transportation</h2>
+                <div class="card" style="margin: 0 auto 3rem auto; max-width: 1000px; width: 100%;">
+                    <div class="card__header" style="text-align: center; padding: 2rem 0 1rem 0;">
+                        <h2 class="card__title" style="margin-bottom: 0.5rem;">Transportation</h2>
                     </div>
-                    <div class="card__content">
-                        <p>The University of Calabria can be reached in different ways:</p>
+                    <div class="card__content" style="padding: 0 2rem 2rem 2rem;">
+                        <p style="font-size: 1.1rem; text-align: center; margin-bottom: 2rem; color: #666;">The University of Calabria can be reached in different ways:</p>
                         
-                        <h3>By Car</h3>
-                        <p>Take the motorway Autostrada A2 Salerno-Reggio Calabria → Exit Rende – Cosenza Nord, and follow the road signs to Università – Paola.</p>
+                        <div style="display: grid; gap: 2rem;">
+                            <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-primary);">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center;"><i class="fas fa-car" style="margin-right: 0.5rem;"></i> By Car</h3>
+                                <p style="line-height: 1.6; margin: 0;">Take the motorway Autostrada A2 Salerno-Reggio Calabria → Exit Rende – Cosenza Nord, and follow the road signs to Università – Paola.</p>
+                            </div>
+                            
+                            <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-primary);">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center;"><i class="fas fa-train" style="margin-right: 0.5rem;"></i> By Train</h3>
+                                <p style="line-height: 1.6; margin: 0;">The railway station of Castiglione Cosentino (3 km away from the Campus) is the closest one, connected to the railway terminals of Paola (railway along the Tyrrhenian sea) and Sibari (railway along the Ionian sea). Once you leave the railway station, walk along Via Thomas Alva Edison for about 100 meters, then cross Via L. Da Vinci and there you will find a bus shelter where the buses heading to the University stop.</p>
+                            </div>
+                            
+                            <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-primary);">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center;"><i class="fas fa-bus" style="margin-right: 0.5rem;"></i> By Coach</h3>
+                                <p style="line-height: 1.6; margin: 0;">The campus is served by Consorzio Autolinee lines 136 and 138 from Rende and Cosenza and several others from different parts of Italy. You can even take direct bus from Roma Fiumicino Airport to Rende Cosenza Nord or University. The campus bus terminal is located near CUBO 0B. Lines to Rende start from gates 1 and 2, and lines to Cosenza start from gates 2 and 3. Tickets may be bought at the box office close to the terminal. For more information, visit <a href="http://www.consorzioautolineetpl.it" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">www.consorzioautolineetpl.it</a></p>
+                            </div>
+                            
+                            <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-primary);">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center;"><i class="fas fa-plane" style="margin-right: 0.5rem;"></i> By Plane</h3>
+                                <p style="line-height: 1.6; margin-bottom: 1rem;">Lamezia Terme Airport is the closest airport and is connected to the cities of Cosenza and Rende by bus service. For detailed information on how to reach Rende/University of Calabria or Cosenza (Bus Station), visit <a href="http://www.sacal.it" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">www.sacal.it</a></p>
+                                
+                                <p style="font-weight: 600; margin-bottom: 0.5rem;">The Lamezia Terme Airport offers:</p>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">A "Central Station – Airport Shuttle" service</li>
+                                    <li style="margin-bottom: 0.5rem;">Airport Bus Rides (UNICAL – COSENZA)</li>
+                                    <li style="margin-bottom: 0.5rem;">Airport Bus Rides (COSENZA – UNICAL)</li>
+                                    <li style="margin-bottom: 0;">Private transfers available for individuals or groups</li>
+                                </ul>
+                            </div>
+                        </div>
                         
-                        <h3>By Train</h3>
-                        <p>The railway station of Castiglione Cosentino (3 km away from the Campus) is the closest one, connected to the railway terminals of Paola (railway along the Tyrrhenian sea) and Sibari (railway along the Ionian sea). Once you leave the railway station, walk along Via Thomas Alva Edison for about 100 meters, then cross Via L. Da Vinci and there you will find a bus shelter where the buses heading to the University stop.</p>
-                        
-                        <h3>By Coach</h3>
-                        <p>The campus is served by Consorzio Autolinee lines 136 and 138 from Rende and Cosenza and several others from different parts of Italy. You can even take direct bus from Roma Fiumicino Airport to Rende Cosenza Nord or University. The campus bus terminal is located near CUBO 0B. Lines to Rende start from gates 1 and 2, and lines to Cosenza start from gates 2 and 3. Tickets may be bought at the box office close to the terminal. For more information, visit <a href="http://www.consorzioautolineetpl.it" target="_blank" rel="noopener noreferrer">www.consorzioautolineetpl.it</a></p>
-                        
-                        <h3>By Plane</h3>
-                        <p>Lamezia Terme Airport is the closest airport and is connected to the cities of Cosenza and Rende by bus service. For detailed information on how to reach Rende/University of Calabria or Cosenza (Bus Station), visit <a href="http://www.sacal.it" target="_blank" rel="noopener noreferrer">www.sacal.it</a></p>
-                        
-                        <p>The Lamezia Terme Airport offers:</p>
-                        <ul>
-                            <li>A "Central Station – Airport Shuttle" service</li>
-                            <li>Airport Bus Rides (UNICAL – COSENZA)</li>
-                            <li>Airport Bus Rides (COSENZA – UNICAL)</li>
-                            <li>Private transfers available for individuals or groups</li>
-                        </ul>
+                        <!-- Transportation Support Button -->
+                        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; border: 2px dashed var(--color-primary);">
+                            <h3 style="color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;"><i class="fas fa-bus" style="margin-right: 0.5rem;"></i> Need Transportation Support?</h3>
+                            <p style="margin-bottom: 1.5rem; color: #666; font-size: 1rem;">Fill out our transportation support form to get assistance with your travel arrangements to the conference venue.</p>
+                            <a href="#" class="btn btn--primary" target="_blank" rel="noopener noreferrer" style="background-color: var(--color-primary); border-color: var(--color-primary);">
+                                <i class="fas fa-clipboard-list"></i> Fill Form for Transportation Support
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- About Cosenza -->
-                <div class="card">
+                <div class="card" style="margin: 0 auto 3rem auto; max-width: 1000px; width: 100%;">
                     <div class="card__header">
                         <h2 class="card__title">About Cosenza</h2>
                     </div>
@@ -222,7 +279,7 @@
                 </div>
 
                 <!-- FAQ -->
-                <div class="card">
+                <div class="card" style="margin: 0 auto 3rem auto; max-width: 1000px; width: 100%;">
                     <div class="card__header">
                         <h2 class="card__title">Frequently Asked Questions</h2>
                     </div>
